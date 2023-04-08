@@ -14,12 +14,13 @@
   "license": "ISC",
   "dependencies": {
     "@radix-ui/react-dialog": "1.0.3",
-    "next": "13.3.0",
+    "next": "13.3.1-canary.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "server-only": "0.0.1"
   },
   "devDependencies": {
+    "@tailwindcss/aspect-ratio": "0.4.2",
     "@types/node": "18.15.11",
     "@types/react": "18.0.33",
     "autoprefixer": "10.4.14",

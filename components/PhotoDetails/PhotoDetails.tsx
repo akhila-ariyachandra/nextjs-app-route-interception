@@ -12,20 +12,22 @@ interface PhotoDetailsProps {
 
 const PhotoDetails: FC<PhotoDetailsProps> = ({ src, alt, photographer }) => {
   return (
-    <div className="mx-auto flex max-w-fit flex-row border border-gray-500">
-      <Image
-        src={src}
-        width={750}
-        height={750}
-        alt={alt}
-        className="h-[750px] w-[750px] object-cover"
-      />
+    <div className="mx-auto max-h-[600px] w-[800px] overflow-hidden bg-white">
+      <div className="float-left h-[600px] w-[600px]">
+        <Image
+          src={src}
+          width={600}
+          height={600}
+          alt={alt}
+          className="h-[750px] w-[750px] object-cover"
+        />
+      </div>
 
-      <div className="w-[300px] p-2">
-        <h1 className="text-2xl font-semibold text-gray-800">
+      <div className="float-right h-full w-[200px] p-2">
+        <h3 className="text-2xl font-semibold text-gray-800">
           {photographer.name}
-        </h1>
-        <h2 className="text-lg font-normal text-gray-600">
+        </h3>
+        <h4 className="text-lg font-normal text-gray-600">
           Taken by{" "}
           <a
             href={`https://www.instagram.com/${photographer.instagram}/`}
@@ -35,7 +37,7 @@ const PhotoDetails: FC<PhotoDetailsProps> = ({ src, alt, photographer }) => {
           >
             {`@${photographer.instagram}`}
           </a>
-        </h2>
+        </h4>
       </div>
     </div>
   );

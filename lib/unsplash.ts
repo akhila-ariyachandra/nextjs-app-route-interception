@@ -5,7 +5,12 @@ const headers = {
 };
 
 export const getPhotos = async () => {
-  return await fetch("https://api.unsplash.com/photos", {
+  const url = new URL("https://api.unsplash.com/photos");
+
+  url.searchParams.set("per_page", "9");
+  url.searchParams.set("order_by", "popular");
+
+  return await fetch(url, {
     headers,
     next: {
       revalidate: 3600,

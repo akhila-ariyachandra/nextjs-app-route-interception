@@ -9,17 +9,19 @@ const HomePage = async () => {
   const photos = (await response.json()) as Photo[];
 
   return (
-    <div className="grid grid-cols-1 place-items-center gap-4 md:grid-cols-2 xl:grid-cols-3">
+    <div className="grid grid-cols-3 place-items-center gap-4">
       {photos.map((photo) => (
-        <Link href={`/photo/${photo.id}`} key={photo.id}>
-          <Image
-            src={photo.urls.regular}
-            width={500}
-            height={500}
-            alt={photo.alt_description}
-            className="h-[500px] w-[500px] object-cover"
-          />
-        </Link>
+        <div key={photo.id} className="aspect-1 overflow-hidden">
+          <Link href={`/photo/${photo.id}`}>
+            <Image
+              src={photo.urls.regular}
+              width={600}
+              height={600}
+              alt={photo.alt_description}
+              className="h-full object-cover object-center"
+            />
+          </Link>
+        </div>
       ))}
     </div>
   );
