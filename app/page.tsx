@@ -14,7 +14,7 @@ const HomePage = async () => {
         <div key={photo.id} className="aspect-1 overflow-hidden">
           <Link href={`/photo/${photo.id}`}>
             <Image
-              src={photo.urls.regular}
+              src={photo.urls.raw}
               width={600}
               height={600}
               alt={photo.alt_description}
