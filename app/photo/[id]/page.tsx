@@ -20,7 +20,7 @@ const PhotoPage = async ({ params }: PhotoPageProps) => {
 
   return (
     <PhotoDetails
-      src={photo.urls.raw}
+      src={photo.urls.regular}
       alt={photo.alt_description}
       photographer={{
         name: photo.user.name,
