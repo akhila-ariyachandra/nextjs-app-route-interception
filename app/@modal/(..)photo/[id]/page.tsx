@@ -22,7 +22,7 @@ const PhotoModalPage = async ({ params }: PhotoModalPageProps) => {
   return (
     <Modal>
       <PhotoDetails
-        src={photo.urls.raw}
+        src={photo.urls.regular}
         alt={photo.alt_description}
         photographer={{
           name: photo.user.name,
