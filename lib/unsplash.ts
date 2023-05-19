@@ -13,7 +13,7 @@ export const getPhotos = async () => {
   return await fetch(url, {
     headers,
     next: {
-      revalidate: 3600,
+      revalidate: 86400,
     },
   });
 };
@@ -22,7 +22,7 @@ export const getPhoto = async (id: string) => {
   return await fetch(`https://api.unsplash.com/photos/${id}`, {
     headers,
     next: {
-      revalidate: 3600,
+      revalidate: 86400,
     },
   });
 };

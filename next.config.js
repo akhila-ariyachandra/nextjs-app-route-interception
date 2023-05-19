@@ -10,7 +10,6 @@ const nextConfig = {
     dirs: ["app", "components", "lib"],
   },
   experimental: {
-    appDir: true,
     typedRoutes: true,
   },
 };
