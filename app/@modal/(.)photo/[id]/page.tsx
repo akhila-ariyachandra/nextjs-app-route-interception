@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Modal from "@/components/Modal";
 import PhotoDetails from "@/components/PhotoDetails";
 import type { Photo } from "@/lib/types";
@@ -29,6 +30,14 @@ const PhotoModalPage = async ({ params }: PhotoModalPageProps) => {
           instagram: photo.user.social.instagram_username,
         }}
       />
+      <div className="mt-4 text-center">
+        <Link
+          href={`/photo/${params.id}`}
+          className="rounded bg-gray-800 px-4 py-2 text-white hover:bg-gray-900"
+        >
+          See more
+        </Link>
+      </div>
     </Modal>
   );
 };
