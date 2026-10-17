@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import Link from "next/link";
 import "./globals.css";
 
@@ -67,6 +68,8 @@ const RootLayout = ({ children, modal }: LayoutProps<"/">) => {
         <main className="container p-4">{children}</main>
 
         {modal}
+
+        <Analytics />
       </body>
     </html>
   );
