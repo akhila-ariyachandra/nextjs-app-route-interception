@@ -20,7 +20,7 @@ const RootLayout = ({ children, modal }: LayoutProps<"/">) => {
           <p className="my-3 text-sm font-medium text-gray-700 sm:text-lg">
             An example showing Next.js 13&apos;s{" "}
             <a
-              href="https://beta.nextjs.org/docs/routing/intercepting-routes"
+              href="https://nextjs.org/docs/app/api-reference/file-conventions/intercepting-routes"
               target="_blank"
               rel="noopener noreferrer"
               className="underline"
