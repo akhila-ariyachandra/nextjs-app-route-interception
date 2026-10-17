@@ -4,7 +4,6 @@ import { Dialog } from "@base-ui/react/dialog";
 import type {  ReactNode } from "react";
 import { useRouter } from "next/navigation";
 
-
 const Modal= ({ children }:{
   children: ReactNode;
 }) => {
