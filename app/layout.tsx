@@ -1,11 +1,11 @@
 import Link from "next/link";
-import type { ReactNode, FC } from "react";
-import "./global.css";
+import "./globals.css";
 
 export const metadata = {
   title: "Next.js Intercepting Routes Modal example",
   description: "An example showing Next.js 13's Intercepting Routes feature.",
 };
+
 const RootLayout = ({ children, modal }: LayoutProps<"/">) => {
   return (
     <html>
