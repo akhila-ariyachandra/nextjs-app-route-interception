@@ -1,33 +1,16 @@
-import PhotoDetails from "@/components/PhotoDetails";
-import type { Photo } from "@/lib/types";
-import { notFound } from "next/navigation";
-import { getPhoto } from "@/lib/unsplash";
+import PhotoDetails from "@/components/photo-details";
+import { getPhotos } from "@/lib/unsplash";
 
-interface PhotoPageProps {
-  params: {
-    id: string;
-  };
-}
+export const generateStaticParams = async () => {
+  const photos = await getPhotos();
 
-const PhotoPage = async ({ params }: PhotoPageProps) => {
-  const response = await getPhoto(params.id);
+  return photos.map((photo) => ({
+    id: photo.id,
+  }));
+};
 
-  if (response.status === 404) {
-    notFound();
-  }
-
-  const photo = (await response.json()) as Photo;
-
-  return (
-    <PhotoDetails
-      src={photo.urls.regular}
-      alt={photo.alt_description}
-      photographer={{
-        name: photo.user.name,
-        instagram: photo.user.social.instagram_username,
-      }}
-    />
-  );
+const PhotoPage = ({ params }: PageProps<"/photo/[id]">) => {
+  return <PhotoDetails params={params} />;
 };
 
 export default PhotoPage;

@@ -1,34 +1,19 @@
-import Modal from "@/components/Modal";
-import PhotoDetails from "@/components/PhotoDetails";
-import type { Photo } from "@/lib/types";
-import { notFound } from "next/navigation";
-import { getPhoto } from "@/lib/unsplash";
+import Modal from "@/components/modal";
+import PhotoDetails from "@/components/photo-details";
+import { getPhotos } from "@/lib/unsplash";
 
-interface PhotoModalPageProps {
-  params: {
-    id: string;
-  };
-}
+export const generateStaticParams = async () => {
+  const photos = await getPhotos();
 
-const PhotoModalPage = async ({ params }: PhotoModalPageProps) => {
-  const response = await getPhoto(params.id);
+  return photos.map((photo) => ({
+    id: photo.id,
+  }));
+};
 
-  if (response.status === 404) {
-    notFound();
-  }
-
-  const photo = (await response.json()) as Photo;
-
+const PhotoModalPage = ({ params }: PageProps<"/photo/[id]">) => {
   return (
     <Modal>
-      <PhotoDetails
-        src={photo.urls.regular}
-        alt={photo.alt_description}
-        photographer={{
-          name: photo.user.name,
-          instagram: photo.user.social.instagram_username,
-        }}
-      />
+      <PhotoDetails params={params} />
     </Modal>
   );
 };

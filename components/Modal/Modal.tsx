@@ -1,6 +1,6 @@
 "use client";
 
-import * as Dialog from "@radix-ui/react-dialog";
+import { Dialog } from "@base-ui/react/dialog";
 import type { FC, ReactNode } from "react";
 import { useRouter } from "next/navigation";
 
@@ -20,11 +20,11 @@ const Modal: FC<ModalProps> = ({ children }) => {
   return (
     <Dialog.Root open onOpenChange={handleOnOpenChange}>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 bg-black/70" />
+        <Dialog.Backdrop className="fixed inset-0 bg-black/70" />
 
-        <Dialog.DialogContent className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <Dialog.Popup className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           {children}
-        </Dialog.DialogContent>
+        </Dialog.Popup>
       </Dialog.Portal>
     </Dialog.Root>
   );
