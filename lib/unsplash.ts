@@ -6,7 +6,6 @@ import { notFound } from "next/navigation";
 
 const photoSchema = z.object({
   id: z.string(),
-  blur_hash: z.string(),
   alt_description: z.string(),
   urls: z.object({
     regular: z.string(),

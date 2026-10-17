@@ -19,8 +19,6 @@ const PhotoDetailsRoot = async ({
           alt={photo.alt_description}
           className="size-150 object-cover"
           priority
-          placeholder="blur"
-          blurDataURL={photo.blur_hash}
         />
       </div>
 

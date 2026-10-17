@@ -17,8 +17,6 @@ const HomePage = async () => {
               height={600}
               alt={photo.alt_description}
               className="h-full object-cover object-center"
-              placeholder="blur"
-              blurDataURL={photo.blur_hash}
               priority={index < 6}
             />
           </Link>
